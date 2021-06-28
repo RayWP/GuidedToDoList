@@ -17,15 +17,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="cfQ-n7-t41" customClass="ToDoTableViewCell" customModule="GuidedToDoList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ToDoCellIdentifier" rowHeight="72" id="GLa-Cx-xgM" customClass="ToDoTableViewCell" customModule="GuidedToDoList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cfQ-n7-t41" id="ngX-4v-MkS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLa-Cx-xgM" id="rFe-8M-3hd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7tx-zq-EDh">
+                                            <rect key="frame" x="28" y="18" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="Cf4-Ix-G5L"/>
+                                                <constraint firstAttribute="height" constant="36" id="lVF-bQ-PKQ"/>
+                                            </constraints>
+                                            <state key="normal" image="app" catalog="system">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="Button">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="15"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <state key="selected" image="app.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="selectedPressed:" destination="GLa-Cx-xgM" eventType="touchUpInside" id="Te2-He-TzV"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3r-fk-7sS">
+                                            <rect key="frame" x="72" y="25.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7tx-zq-EDh" firstAttribute="leading" secondItem="rFe-8M-3hd" secondAttribute="leadingMargin" constant="8" id="Ul8-iA-JVR"/>
+                                        <constraint firstItem="D3r-fk-7sS" firstAttribute="centerY" secondItem="rFe-8M-3hd" secondAttribute="centerY" id="eSm-Y9-7Ya"/>
+                                        <constraint firstItem="D3r-fk-7sS" firstAttribute="leading" secondItem="7tx-zq-EDh" secondAttribute="trailing" constant="8" id="fJb-Dj-Dif"/>
+                                        <constraint firstItem="7tx-zq-EDh" firstAttribute="centerY" secondItem="rFe-8M-3hd" secondAttribute="centerY" id="tT5-BK-FeA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5yt-ij-xOL" kind="show" identifier="showDetails" id="ypX-wU-WTi"/>
+                                    <outlet property="label_text" destination="D3r-fk-7sS" id="qwE-GS-dJW"/>
+                                    <outlet property="selected_btn" destination="7tx-zq-EDh" id="pLf-FX-6Xr"/>
+                                    <segue destination="5yt-ij-xOL" kind="show" identifier="showDetails" id="Czb-60-SYI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -38,14 +74,14 @@
                     <navigationItem key="navigationItem" title="To Do List" id="03N-Te-TnQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="psS-ff-WLR">
                             <connections>
-                                <segue destination="mf0-4n-dfr" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2Li-dK-EzS"/>
+                                <segue destination="mf0-4n-dfr" kind="presentation" identifier="" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2Li-dK-EzS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPh-RA-2ig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="187"/>
+            <point key="canvasLocation" x="-727.536231884058" y="186.83035714285714"/>
         </scene>
         <!--New ToDo-->
         <scene sceneID="5GG-UE-pkv">
@@ -251,7 +287,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ypX-wU-WTi"/>
+        <segue reference="Czb-60-SYI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="app" catalog="system" width="128" height="114"/>

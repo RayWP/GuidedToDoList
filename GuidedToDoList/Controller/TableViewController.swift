@@ -7,7 +7,18 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, ToDoCellDelegate {
+    
+    func checkmarkTapped(sender: ToDoTableViewCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var todo = todos[indexPath.row]
+            todo.isComplete = !todo.isComplete
+            todos[indexPath.row] = todo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDos(todos)
+        }
+    }
+    
 
     var todos = [ToDo]()
     
@@ -31,15 +42,17 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier") as? ToDoTableViewCell
                 else {
                     fatalError("Could not dequeue a cell")
                 }
         
+        cell.delegate = self
         
         let todo = todos[indexPath.row]
         print("configure: " + todo.title)
-        cell.textLabel?.text = todo.title
+        cell.label_text.text = todo.title
+        cell.selected_btn.isSelected = todo.isComplete
         // Configure the cell...
 
         return cell
@@ -60,6 +73,7 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .right)
+            ToDo.saveToDos(todos)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -71,6 +85,8 @@ class TableViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedTodo = todos[indexPath.row]
             todoViewController.todo = selectedTodo
+        } else {
+            
         }
     }
     
@@ -94,6 +110,7 @@ class TableViewController: UITableViewController {
             }
            
         }
+        ToDo.saveToDos(todos)
     }
 
     /*
