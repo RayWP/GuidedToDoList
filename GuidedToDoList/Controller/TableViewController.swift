@@ -65,6 +65,36 @@ class TableViewController: UITableViewController {
         }    
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let todoViewController = segue.destination as! ToDoTableViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedTodo = todos[indexPath.row]
+            todoViewController.todo = selectedTodo
+        }
+    }
+    
+    @IBAction func unwindToTableView(segue: UIStoryboardSegue){
+        
+    }
+    
+    @IBAction func unwindToSave(segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind" else { return }
+            let sourceViewController = segue.source as!
+            ToDoTableViewController
+        
+        if let todo = sourceViewController.todo {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                todos[selectedIndexPath.row] = todo
+                tableView.reloadRows(at: [selectedIndexPath], with: .middle)
+            } else {
+                let newIndexPath = IndexPath(row: todos.count, section: 0)
+                todos.append(todo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+           
+        }
+    }
 
     /*
     // Override to support rearranging the table view.

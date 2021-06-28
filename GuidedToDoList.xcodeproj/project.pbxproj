@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1D602526898AF500408655 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D602426898AF500408655 /* ToDoTableViewController.swift */; };
 		4D58B7A52685D2F1002DC83F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58B7A42685D2F1002DC83F /* AppDelegate.swift */; };
 		4D58B7A72685D2F1002DC83F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58B7A62685D2F1002DC83F /* SceneDelegate.swift */; };
 		4D58B7AC2685D2F1002DC83F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D58B7AA2685D2F1002DC83F /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		4D58B7B12685D2F2002DC83F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D58B7AF2685D2F2002DC83F /* LaunchScreen.storyboard */; };
 		4D58B7BA2685D4A5002DC83F /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58B7B92685D4A5002DC83F /* ToDo.swift */; };
 		4D58B7BD2685D577002DC83F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D58B7BC2685D577002DC83F /* TableViewController.swift */; };
+		4DB6AFEE2689B05600D71E51 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6AFED2689B05600D71E51 /* ToDoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1D602426898AF500408655 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		4D58B7A12685D2F1002DC83F /* GuidedToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidedToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D58B7A42685D2F1002DC83F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D58B7A62685D2F1002DC83F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		4D58B7B22685D2F2002DC83F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D58B7B92685D4A5002DC83F /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		4D58B7BC2685D577002DC83F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4DB6AFED2689B05600D71E51 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		4D58B7A32685D2F1002DC83F /* GuidedToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				4DB6AFEC2689B03900D71E51 /* View */,
 				4D58B7BB2685D55E002DC83F /* Controller */,
 				4D58B7B82685D486002DC83F /* Model */,
 				4D58B7A42685D2F1002DC83F /* AppDelegate.swift */,
@@ -82,8 +87,17 @@
 			isa = PBXGroup;
 			children = (
 				4D58B7BC2685D577002DC83F /* TableViewController.swift */,
+				4D1D602426898AF500408655 /* ToDoTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4DB6AFEC2689B03900D71E51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DB6AFED2689B05600D71E51 /* ToDoTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +173,9 @@
 				4D58B7BA2685D4A5002DC83F /* ToDo.swift in Sources */,
 				4D58B7A52685D2F1002DC83F /* AppDelegate.swift in Sources */,
 				4D58B7A72685D2F1002DC83F /* SceneDelegate.swift in Sources */,
+				4DB6AFEE2689B05600D71E51 /* ToDoTableViewCell.swift in Sources */,
 				4D58B7BD2685D577002DC83F /* TableViewController.swift in Sources */,
+				4D1D602526898AF500408655 /* ToDoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
