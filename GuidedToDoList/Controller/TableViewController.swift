@@ -2,7 +2,6 @@
 //  TableViewController.swift
 //  GuidedToDoList
 //
-//  Created by Raymond on 25/06/21.
 //
 
 import UIKit
